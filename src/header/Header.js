@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 
 function Header() {
+	const [isNavVisible, setNavVisible] = useState(false);
+
+	const toggleNav = () => {
+		setNavVisible(!isNavVisible);
+	};
+
 	return (
 		<header className="homeNavBar">
-			<div className="navBarShowOut">
+			<div className={`navBarShowOut ${isNavVisible ? "show" : ""}`}>
 				<img
 					className="closeNavBarShowOut"
 					src="https://img.icons8.com/ios-glyphs/60/FFFFFF/delete-sign.png"
 					alt="Close"
+					onClick={toggleNav}
 				/>
 				<button href="">首頁</button>
 				<button href="">預約服務</button>
@@ -19,6 +26,7 @@ function Header() {
 				className="hamburger"
 				src="https://img.icons8.com/stamp/32/menu.png"
 				alt="menu"
+				onClick={toggleNav}
 			/>
 			<span className="navItemLeft" id="navHome">
 				首頁

@@ -1,6 +1,8 @@
+/* Header.css */
+
 @font-face {
 	font-family: "all-text";
-	src: url(../../jf2.2四分糖.otf);
+	src: url(../jf2.2四分糖.otf);
 }
 
 html,
@@ -19,7 +21,7 @@ a {
 
 .navBarShowOut button:link,
 .navBarShowOut button:visited {
-	color: #ffff;
+	color: #fff;
 }
 
 .navBarShowOut button:hover {
@@ -62,7 +64,7 @@ a {
 	height: 100%;
 	object-fit: cover;
 	opacity: 0.5;
-	z-index: -1; /* 確保視頻在背景 */
+	z-index: -1; /* 确保视频在背景 */
 }
 
 .homeNavBar {
@@ -107,10 +109,20 @@ a {
 	backdrop-filter: blur(10px);
 }
 
-.navBarShowOut a {
+.navBarShowOut.show {
+	display: flex;
+}
+
+.navBarShowOut button {
 	margin: 20px;
-	padding: 20px;
-	font-size: 24px;
+	padding: 30px 20px;
+	font-size: 34px;
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+	color: #fff;
+	font-family: "all-text";
+	cursor: pointer;
+	letter-spacing: 5px;
 }
 
 .navBarShowOut img {
@@ -160,19 +172,23 @@ a {
 	position: absolute;
 	right: 20px;
 }
+
 .navIcon button {
-	background-color: #ffff;
+	background-color: #fff;
 	border: none;
 }
+
 .navIcon button i {
 	position: relative;
 	top: 10px;
 	margin: 0 15px;
 	font-size: 28px;
+	cursor: pointer;
 }
 
 .navIcon button i:hover {
 	font-size: 30px;
+	opacity: 0.7;
 }
 
 .homeNavBar span {
