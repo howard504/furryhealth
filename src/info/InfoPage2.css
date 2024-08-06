@@ -83,16 +83,14 @@
 	border-radius: 20px;
 	position: absolute;
 	opacity: 0.9;
-	overflow: scroll;
-	scrollbar-width: 0px;
+	overflow-y: auto;
 	position: relative;
+	scrollbar-width: thin; /* 為 Firefox */
 	top: 20%;
 }
 #page2News::-webkit-scrollbar {
-	width: 0;
-	background: transparent; /* 隱藏滾動條 */
+	width: 5px;
 }
-
 #newsInfo {
 	background-color: #ffffff;
 	margin: 20px 30px;
