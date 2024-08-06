@@ -6,13 +6,13 @@ import "./InfoPage3.css";
 function Info() {
 	return (
 		<body>
-			<div class="dots-nav">
-				<span class="dot" data-page="1"></span>
-				<span class="dot" data-page="2"></span>
-				<span class="dot" data-page="3"></span>
+			<div className="dots-nav">
+				<span className="dot" data-page="1"></span>
+				<span className="dot" data-page="2"></span>
+				<span className="dot" data-page="3"></span>
 			</div>
-			<div class="container">
-				<div class="page" id="page1">
+			<div className="container">
+				<div className="page" id="page1">
 					<video
 						autoplay
 						muted
@@ -30,17 +30,26 @@ function Info() {
 					<div className="homeSelect">
 						<div className="selectTop">
 							<div id="homeDoc">
-								<img src="https://img.icons8.com/ios-filled/100/FFFFFF/calendar--v1.png" />
+								<img
+									src="https://img.icons8.com/ios-filled/100/FFFFFF/calendar--v1.png"
+									alt="小狗"
+								/>
 								<p>看診預約</p>
 							</div>
 							<hr />
 							<div id="homeBeauty">
-								<img src="https://img.icons8.com/ios-filled/100/FFFFFF/barber-scissors.png" />
+								<img
+									src="https://img.icons8.com/ios-filled/100/FFFFFF/barber-scissors.png"
+									alt="小狗"
+								/>
 								<p>美容預約</p>
 							</div>
 							<hr />
 							<div id="homeNight">
-								<img src="https://img.icons8.com/ios/100/FFFFFF/home-page.png" />
+								<img
+									src="https://img.icons8.com/ios/100/FFFFFF/home-page.png"
+									alt="小狗"
+								/>
 								<p>收容預約</p>
 							</div>
 						</div>
@@ -132,6 +141,7 @@ function Info() {
 						<div className="cards">
 							<div className="card">
 								<img
+									alt="小狗"
 									id="cardImage"
 									src="../大專題模擬圖/1719287829-thumbnail.jpeg"
 								/>
@@ -140,7 +150,7 @@ function Info() {
 									📣台北寵物用品展來囉!! ​ 🐱🐶邀請毛孩爸、媽毛們
 									一起來逛台北寵物用品展!
 								</span>
-								<a href="#">more</a>
+								<a href="http://localhost:3000/">more</a>
 							</div>
 						</div>
 						<img
@@ -151,86 +161,6 @@ function Info() {
 						/>
 					</div>
 					<div id="page2News">
-						<div id="newsInfo">
-							<p id="newsDate">2022.02.18</p>
-							<p id="newsText">
-								【慈愛海佃分院 停止營業公告】 ​ 親愛的顧客
-								感謝您一直以來對慈愛動物醫院 海佃分院的支持與厚愛 ​
-								因營運調整慈愛動物醫院海佃分院 ●最後服務日為 2024 年 2 月 27日
-								●停止營業日為 2024 年 2 月 28日 對於這造成的不便，我們深表歉意
-								​。
-							</p>
-						</div>
-						<div id="newsInfo">
-							<p id="newsDate">2022.02.18</p>
-							<p id="newsText">
-								【慈愛海佃分院 停止營業公告】 ​ 親愛的顧客
-								感謝您一直以來對慈愛動物醫院 海佃分院的支持與厚愛 ​
-								因營運調整慈愛動物醫院海佃分院 ●最後服務日為 2024 年 2 月 27日
-								●停止營業日為 2024 年 2 月 28日 對於這造成的不便，我們深表歉意
-								​。
-							</p>
-						</div>
-						<div id="newsInfo">
-							<p id="newsDate">2022.02.18</p>
-							<p id="newsText">
-								【慈愛海佃分院 停止營業公告】 ​ 親愛的顧客
-								感謝您一直以來對慈愛動物醫院 海佃分院的支持與厚愛 ​
-								因營運調整慈愛動物醫院海佃分院 ●最後服務日為 2024 年 2 月 27日
-								●停止營業日為 2024 年 2 月 28日 對於這造成的不便，我們深表歉意
-								​。
-							</p>
-						</div>
-						<div id="newsInfo">
-							<p id="newsDate">2022.02.18</p>
-							<p id="newsText">
-								【慈愛海佃分院 停止營業公告】 ​ 親愛的顧客
-								感謝您一直以來對慈愛動物醫院 海佃分院的支持與厚愛 ​
-								因營運調整慈愛動物醫院海佃分院 ●最後服務日為 2024 年 2 月 27日
-								●停止營業日為 2024 年 2 月 28日 對於這造成的不便，我們深表歉意
-								​。
-							</p>
-						</div>
-						<div id="newsInfo">
-							<p id="newsDate">2022.02.18</p>
-							<p id="newsText">
-								【慈愛海佃分院 停止營業公告】 ​ 親愛的顧客
-								感謝您一直以來對慈愛動物醫院 海佃分院的支持與厚愛 ​
-								因營運調整慈愛動物醫院海佃分院 ●最後服務日為 2024 年 2 月 27日
-								●停止營業日為 2024 年 2 月 28日 對於這造成的不便，我們深表歉意
-								​。
-							</p>
-						</div>
-						<div id="newsInfo">
-							<p id="newsDate">2022.02.18</p>
-							<p id="newsText">
-								【慈愛海佃分院 停止營業公告】 ​ 親愛的顧客
-								感謝您一直以來對慈愛動物醫院 海佃分院的支持與厚愛 ​
-								因營運調整慈愛動物醫院海佃分院 ●最後服務日為 2024 年 2 月 27日
-								●停止營業日為 2024 年 2 月 28日 對於這造成的不便，我們深表歉意
-								​。
-							</p>
-						</div>
-						<div id="newsInfo">
-							<p id="newsDate">2022.02.18</p>
-							<p id="newsText">
-								【慈愛海佃分院 停止營業公告】 ​ 親愛的顧客
-								感謝您一直以來對慈愛動物醫院 海佃分院的支持與厚愛 ​
-								因營運調整慈愛動物醫院海佃分院 ●最後服務日為 2024 年 2 月 27日
-								●停止營業日為 2024 年 2 月 28日 對於這造成的不便，我們深表歉意
-								​。
-							</p>
-						</div>
-						<div id="newsInfo">
-							<p id="newsDate">2022.02.18</p>
-							<p id="newsText">
-								【慈愛海佃分院 停止營業公告】 ​ 親愛的顧客
-								感謝您一直以來對慈愛動物醫院 海佃分院的支持與厚愛 ​
-								因營運調整慈愛動物醫院海佃分院 ●最後服務日為 2024 年 2 月 27日
-								●停止營業日為 2024 年 2 月 28日 對於這造成的不便，我們深表歉意
-								​。
-							</p>
-						</div>
 						<div id="newsInfo">
 							<p id="newsDate">2022.02.18</p>
 							<p id="newsText">
@@ -258,52 +188,56 @@ function Info() {
 					<div id="commonPage">
 						<div className="common">
 							<img
+								alt="小狗"
 								className="commonIcon"
 								src="https://img.icons8.com/ios-filled/100/FFFFFF/home.png"
 							/>
 							<p className="commonText">正在幫助的浪浪園區有</p>
-							<div class="unit">
-								<p class="commonNumber Number1">0</p>
+							<div className="unit">
+								<p className="commonNumber Number1">0</p>
 								<p>個</p>
 							</div>
 
-							<button class="commonButton">瞭解更多</button>
+							<button className="commonButton">瞭解更多</button>
 						</div>
-						<div class="common">
+						<div className="common">
 							<img
-								class="commonIcon"
+								alt="小狗"
+								className="commonIcon"
 								src="https://img.icons8.com/windows/96/FFFFFF/hand-holding-dollar.png"
 							/>
-							<p class="commonText">已捐出貓狗飼料總金額</p>
-							<div class="unit">
-								<p class="commonNumber Number2">0</p>
+							<p className="commonText">已捐出貓狗飼料總金額</p>
+							<div className="unit">
+								<p className="commonNumber Number2">0</p>
 								<p>元</p>
 							</div>
-							<button class="commonButton">瞭解更多</button>
+							<button className="commonButton">瞭解更多</button>
 						</div>
-						<div class="common">
+						<div className="common">
 							<img
-								class="commonIcon"
+								alt="小狗"
+								className="commonIcon"
 								src="https://img.icons8.com/sf-regular/96/FFFFFF/like.png"
 							/>
-							<p class="commonText">已捐出的貓狗飼料總重</p>
-							<div class="unit">
-								<p class="commonNumber Number3">0</p>
+							<p className="commonText">已捐出的貓狗飼料總重</p>
+							<div className="unit">
+								<p className="commonNumber Number3">0</p>
 								<p>kg</p>
 							</div>
-							<button class="commonButton">瞭解更多</button>
+							<button className="commonButton">瞭解更多</button>
 						</div>
-						<div class="common">
+						<div className="common">
 							<img
-								class="commonIcon"
+								alt="小狗"
+								className="commonIcon"
 								src="https://img.icons8.com/ios/100/FFFFFF/dog--v1.png"
 							/>
-							<p class="commonText">正在受惠的貓狗總數</p>
-							<div class="unit">
-								<p class="commonNumber Number4">0</p>
+							<p className="commonText">正在受惠的貓狗總數</p>
+							<div className="unit">
+								<p className="commonNumber Number4">0</p>
 								<p>隻</p>
 							</div>
-							<button class="commonButton">瞭解更多</button>
+							<button className="commonButton">瞭解更多</button>
 						</div>
 					</div>
 				</div>
