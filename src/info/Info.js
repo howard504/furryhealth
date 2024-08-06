@@ -1,11 +1,204 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./InfoPage1.css";
 import "./InfoPage2.css";
 import "./InfoPage3.css";
 
 function Info() {
+	useEffect(() => {
+		//==============================page1==============================
+		function handleTabClick(tabId, showClass) {
+			document.querySelector(".docSelectBottom").style.display = "none";
+			document.querySelector(".beautySelectBottom").style.display = "none";
+			document.querySelector(".nightSelectBottom").style.display = "none";
+			document.querySelector(showClass).style.display = "flex";
+
+			document.getElementById("homeDoc").classList.remove("changeColor");
+			document.getElementById("homeBeauty").classList.remove("changeColor");
+			document.getElementById("homeNight").classList.remove("changeColor");
+
+			document.getElementById(tabId).classList.add("changeColor");
+		}
+
+		document.getElementById("homeDoc").addEventListener("click", () => {
+			handleTabClick("homeDoc", ".docSelectBottom");
+		});
+
+		document.getElementById("homeBeauty").addEventListener("click", () => {
+			handleTabClick("homeBeauty", ".beautySelectBottom");
+		});
+
+		document.getElementById("homeNight").addEventListener("click", () => {
+			handleTabClick("homeNight", ".nightSelectBottom");
+		});
+
+		// ========== Document Ready Equivalent ==========
+
+		const dots = document.querySelectorAll(".dot");
+		const pages = document.querySelectorAll(".page");
+		const container = document.querySelector(".container");
+		let animated = false; // 修改部分
+
+		function currentPage(pageNum) {
+			// 使用 scrollIntoView 方法，將指定的頁面元素平滑地滾動到可視區域
+			pages[pageNum - 1].scrollIntoView({ behavior: "smooth" });
+
+			// 更新導航點的狀態
+			updateDots(pageNum);
+
+			// 在翻頁到第三頁時觸發動畫，並確保動畫只會執行一次
+			if (pageNum === 3 && !animated) {
+				// 修改部分
+				startAnimation(); // 修改部分
+				animated = true; // 修改部分
+			} // 修改部分
+		}
+
+		function updateDots(activePage) {
+			dots.forEach((dot, index) => {
+				if (index + 1 === activePage) {
+					dot.classList.add("active");
+				} else {
+					dot.classList.remove("active");
+				}
+			});
+		}
+
+		function onScroll() {
+			const scrollPos = container.scrollTop + window.innerHeight / 2;
+			pages.forEach((page, index) => {
+				if (
+					scrollPos >= page.offsetTop &&
+					scrollPos < page.offsetTop + page.offsetHeight
+				) {
+					updateDots(index + 1);
+					// 在翻頁到第三頁時觸發動畫，並確保動畫只會執行一次
+					if (index + 1 === 3 && !animated) {
+						// 修改部分
+						startAnimation(); // 修改部分
+						animated = true; // 修改部分
+					} // 修改部分
+				}
+			});
+		}
+
+		container.addEventListener("scroll", onScroll);
+
+		dots.forEach((dot, index) => {
+			dot.addEventListener("click", () => {
+				currentPage(index + 1);
+			});
+		});
+
+		// 初始化滾動位置，確保正確的圓點被設置為活動狀態
+		onScroll();
+
+		// ========== Footer Click Handling ==========
+
+		const footerHandles = document.querySelectorAll(".footer");
+		footerHandles.forEach((handle) => {
+			handle.addEventListener("click", () => {
+				const footer = handle.closest(".footer");
+				footer.classList.toggle("footer-expanded");
+			});
+		});
+
+		// =========================Page2=========================================
+		const scrollcontainer = document.querySelector(".cards");
+		const prev = document.getElementById("prev");
+		const next = document.getElementById("next");
+
+		scrollcontainer.addEventListener("wheel", (evt) => {
+			evt.preventDefault();
+			scrollcontainer.scrollLeft += evt.deltaY;
+		});
+
+		next.addEventListener("click", () => {
+			scrollcontainer.style.scrollBehavior = "smooth";
+			scrollcontainer.scrollLeft += 400;
+		});
+
+		prev.addEventListener("click", () => {
+			scrollcontainer.style.scrollBehavior = "smooth";
+			scrollcontainer.scrollLeft -= 400;
+		});
+
+		//==========================page3===================================
+		// 修改部分：新增 startAnimation 函數，用於觸發數字動畫
+		function startAnimation() {
+			const animalHome = document.querySelector(".Number1");
+			animateNumber(animalHome, 1, 200, 3000);
+
+			const animalMoney = document.querySelector(".Number2");
+			animateNumber(animalMoney, 1, 1866224, 3000);
+
+			const animalfood = document.querySelector(".Number3");
+			animateNumber(animalfood, 1, 3212531, 3000);
+
+			const animalNumber = document.querySelector(".Number4");
+			animateNumber(animalNumber, 1, 120000, 3000);
+		}
+
+		function animateNumber(element, start, end, duration) {
+			let startTime = null;
+
+			function updateNumber(currentTime) {
+				if (!startTime) startTime = currentTime;
+
+				const progress = currentTime - startTime;
+
+				const currentNumber = Math.min(
+					Math.floor((progress / duration) * (end - start) + start),
+					end
+				);
+
+				element.textContent = currentNumber.toLocaleString();
+
+				if (currentNumber < end) {
+					requestAnimationFrame(updateNumber);
+				}
+			}
+
+			requestAnimationFrame(updateNumber);
+		}
+
+		// 清理事件
+		return () => {
+			document
+				.getElementById("homeDoc")
+				.removeEventListener("click", handleTabClick);
+			document
+				.getElementById("homeBeauty")
+				.removeEventListener("click", handleTabClick);
+			document
+				.getElementById("homeNight")
+				.removeEventListener("click", handleTabClick);
+			container.removeEventListener("scroll", onScroll);
+			dots.forEach((dot, index) => {
+				dot.removeEventListener("click", () => currentPage(index + 1));
+			});
+			footerHandles.forEach((handle) => {
+				handle.removeEventListener("click", () => {
+					const footer = handle.closest(".footer");
+					footer.classList.toggle("footer-expanded");
+				});
+			});
+			scrollcontainer.removeEventListener("wheel", (evt) => {
+				evt.preventDefault();
+				scrollcontainer.scrollLeft += evt.deltaY;
+			});
+			next.removeEventListener("click", () => {
+				scrollcontainer.style.scrollBehavior = "smooth";
+				scrollcontainer.scrollLeft += 400;
+			});
+			prev.removeEventListener("click", () => {
+				scrollcontainer.style.scrollBehavior = "smooth";
+				scrollcontainer.scrollLeft -= 400;
+			});
+		};
+	}, []);
+
 	return (
-		<body>
+		<div>
 			<div className="dots-nav">
 				<span className="dot" data-page="1"></span>
 				<span className="dot" data-page="2"></span>
@@ -249,7 +442,7 @@ function Info() {
 			></script>
 			<script src="./homePage1.js"></script>
 			<script src="../header/header.js"></script>
-		</body>
+		</div>
 	);
 }
 
