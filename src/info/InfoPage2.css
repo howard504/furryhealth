@@ -9,7 +9,7 @@
 	display: flex;
 	width: 50%;
 	position: absolute;
-	top: 180px;
+	top: 20%;
 }
 
 .cards {
@@ -96,7 +96,7 @@
 	margin: 20px 30px;
 	border-radius: 10px;
 	position: relative;
-	top: 80%;
+	top: 70%;
 	box-shadow: 2px 2px 10px gray;
 	white-space: unset;
 }

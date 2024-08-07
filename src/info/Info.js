@@ -7,7 +7,7 @@ function Info() {
 	const [currentPage, setCurrentPage] = useState(1);
 	const containerRef = useRef(null);
 	const scrolling = useRef(false);
-
+	// ========================================= 頁面轉換
 	useEffect(() => {
 		const container = containerRef.current;
 
@@ -52,7 +52,9 @@ function Info() {
 	const handleButtonClick = (section) => {
 		setActiveSection(section);
 	};
-	// =========================================
+	// ========================================= page 2 crad js
+
+	// ================================================== page2 info js
 	useEffect(() => {
 		const newsContainer = document.getElementById("page2News");
 
@@ -78,8 +80,6 @@ function Info() {
 			}
 		};
 	}, []);
-	// ==================================================
-
 	return (
 		<div>
 			<div className="dots-nav">
@@ -259,8 +259,97 @@ function Info() {
 								</span>
 								<a href="http://localhost:3000/home.html">more</a>
 							</div>
-						</div>
-						<div class="cards">
+							<div class="card">
+								<img
+									alt="最新消息圖片"
+									id="cardImage"
+									src="../大專題模擬圖/1719287829-thumbnail.jpeg"
+								/>
+								<h3 id="cardTitle">【✨台北寵物用品展✨】</h3>
+								<span id="cardText">
+									📣台北寵物用品展來囉!! ​ 🐱🐶邀請毛孩爸、媽毛們
+									一起來逛台北寵物用品展!
+								</span>
+								<a href="http://localhost:3000/home.html">more</a>
+							</div>
+							<div class="card">
+								<img
+									alt="最新消息圖片"
+									id="cardImage"
+									src="../大專題模擬圖/1719287829-thumbnail.jpeg"
+								/>
+								<h3 id="cardTitle">【✨台北寵物用品展✨】</h3>
+								<span id="cardText">
+									📣台北寵物用品展來囉!! ​ 🐱🐶邀請毛孩爸、媽毛們
+									一起來逛台北寵物用品展!
+								</span>
+								<a href="http://localhost:3000/home.html">more</a>
+							</div>
+							<div class="card">
+								<img
+									alt="最新消息圖片"
+									id="cardImage"
+									src="../大專題模擬圖/1719287829-thumbnail.jpeg"
+								/>
+								<h3 id="cardTitle">【✨台北寵物用品展✨】</h3>
+								<span id="cardText">
+									📣台北寵物用品展來囉!! ​ 🐱🐶邀請毛孩爸、媽毛們
+									一起來逛台北寵物用品展!
+								</span>
+								<a href="http://localhost:3000/home.html">more</a>
+							</div>
+							<div class="card">
+								<img
+									alt="最新消息圖片"
+									id="cardImage"
+									src="../大專題模擬圖/1719287829-thumbnail.jpeg"
+								/>
+								<h3 id="cardTitle">【✨台北寵物用品展✨】</h3>
+								<span id="cardText">
+									📣台北寵物用品展來囉!! ​ 🐱🐶邀請毛孩爸、媽毛們
+									一起來逛台北寵物用品展!
+								</span>
+								<a href="http://localhost:3000/home.html">more</a>
+							</div>
+							<div class="card">
+								<img
+									alt="最新消息圖片"
+									id="cardImage"
+									src="../大專題模擬圖/1719287829-thumbnail.jpeg"
+								/>
+								<h3 id="cardTitle">【✨台北寵物用品展✨】</h3>
+								<span id="cardText">
+									📣台北寵物用品展來囉!! ​ 🐱🐶邀請毛孩爸、媽毛們
+									一起來逛台北寵物用品展!
+								</span>
+								<a href="http://localhost:3000/home.html">more</a>
+							</div>
+							<div class="card">
+								<img
+									alt="最新消息圖片"
+									id="cardImage"
+									src="../大專題模擬圖/1719287829-thumbnail.jpeg"
+								/>
+								<h3 id="cardTitle">【✨台北寵物用品展✨】</h3>
+								<span id="cardText">
+									📣台北寵物用品展來囉!! ​ 🐱🐶邀請毛孩爸、媽毛們
+									一起來逛台北寵物用品展!
+								</span>
+								<a href="http://localhost:3000/home.html">more</a>
+							</div>
+							<div class="card">
+								<img
+									alt="最新消息圖片"
+									id="cardImage"
+									src="../大專題模擬圖/1719287829-thumbnail.jpeg"
+								/>
+								<h3 id="cardTitle">【✨台北寵物用品展✨】</h3>
+								<span id="cardText">
+									📣台北寵物用品展來囉!! ​ 🐱🐶邀請毛孩爸、媽毛們
+									一起來逛台北寵物用品展!
+								</span>
+								<a href="http://localhost:3000/home.html">more</a>
+							</div>
 							<div class="card">
 								<img
 									alt="最新消息圖片"
@@ -275,51 +364,7 @@ function Info() {
 								<a href="http://localhost:3000/home.html">more</a>
 							</div>
 						</div>
-						<div class="cards">
-							<div class="card">
-								<img
-									alt="最新消息圖片"
-									id="cardImage"
-									src="../大專題模擬圖/1719287829-thumbnail.jpeg"
-								/>
-								<h3 id="cardTitle">【✨台北寵物用品展✨】</h3>
-								<span id="cardText">
-									📣台北寵物用品展來囉!! ​ 🐱🐶邀請毛孩爸、媽毛們
-									一起來逛台北寵物用品展!
-								</span>
-								<a href="http://localhost:3000/home.html">more</a>
-							</div>
-						</div>
-						<div class="cards">
-							<div class="card">
-								<img
-									alt="最新消息圖片"
-									id="cardImage"
-									src="../大專題模擬圖/1719287829-thumbnail.jpeg"
-								/>
-								<h3 id="cardTitle">【✨台北寵物用品展✨】</h3>
-								<span id="cardText">
-									📣台北寵物用品展來囉!! ​ 🐱🐶邀請毛孩爸、媽毛們
-									一起來逛台北寵物用品展!
-								</span>
-								<a href="http://localhost:3000/home.html">more</a>
-							</div>
-						</div>
-						<div class="cards">
-							<div class="card">
-								<img
-									alt="最新消息圖片"
-									id="cardImage"
-									src="../大專題模擬圖/1719287829-thumbnail.jpeg"
-								/>
-								<h3 id="cardTitle">【✨台北寵物用品展✨】</h3>
-								<span id="cardText">
-									📣台北寵物用品展來囉!! ​ 🐱🐶邀請毛孩爸、媽毛們
-									一起來逛台北寵物用品展!
-								</span>
-								<a href="http://localhost:3000/home.html">more</a>
-							</div>
-						</div>
+
 						<img
 							id="next"
 							class="control"
