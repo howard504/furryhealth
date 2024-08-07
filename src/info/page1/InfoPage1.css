@@ -1,15 +1,9 @@
-@font-face {
-	font-family: "all-text";
-	src: url(../jf2.2四分糖.otf);
-}
-
 html,
 body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
 	box-sizing: border-box;
-	font-family: "all-text", Arial, sans-serif;
 	scroll-behavior: smooth;
 }
 
