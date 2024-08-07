@@ -8,6 +8,7 @@
 	top: 16%;
 	font-size: 30px;
 }
+
 #page3TopText {
 	letter-spacing: 3px;
 	position: absolute;
@@ -18,6 +19,7 @@
 	font-size: 20px;
 	min-width: 768px;
 }
+
 #commonPage {
 	background: linear-gradient(to top left, #0089a7, #6cabb9);
 	min-width: 768px;
@@ -28,22 +30,22 @@
 	bottom: 7%;
 	border-radius: 20px;
 }
+
 .common {
 	text-align: center;
 	width: 400px;
-
 	display: flex;
 	flex-direction: column;
 }
 
 .commonIcon {
-	width: 25%;
+	width: 40%;
 	margin: 30px auto;
 }
 
 .commonText {
 	white-space: wrap;
-	font-size: 26px;
+	font-size: 24px;
 	margin: 18px;
 	line-height: 28px;
 	letter-spacing: 4px;
@@ -58,10 +60,19 @@
 	white-space: nowrap;
 	justify-content: center;
 }
+
 .unit p {
 	color: #ffffff;
 	font-size: 26px;
 	margin: 10px 5px;
+}
+
+.commonNumber {
+	font-weight: bold;
+}
+
+.unitText {
+	font-weight: normal;
 }
 
 .commonButton {
@@ -78,6 +89,7 @@
 	padding: 10px;
 	margin: 30px auto;
 }
+
 .commonButton:hover {
 	opacity: 0.85;
 }

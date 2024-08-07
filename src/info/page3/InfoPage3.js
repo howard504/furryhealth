@@ -1,7 +1,54 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./InfoPage3.css";
 
 const InfoPage3 = () => {
+	const [numbers, setNumbers] = useState({
+		Number1: 0,
+		Number2: 0,
+		Number3: 0,
+		Number4: 0,
+	});
+
+	const animationRef = useRef(null);
+
+	const animateNumber = (key, start, end, duration) => {
+		let startTime = null;
+
+		const updateNumber = (currentTime) => {
+			if (!startTime) startTime = currentTime;
+			const progress = currentTime - startTime;
+
+			const currentNumber = Math.min(
+				Math.floor((progress / duration) * (end - start) + start),
+				end
+			);
+
+			setNumbers((prevNumbers) => ({
+				...prevNumbers,
+				[key]: currentNumber,
+			}));
+
+			if (currentNumber < end) {
+				animationRef.current = requestAnimationFrame(updateNumber);
+			}
+		};
+
+		animationRef.current = requestAnimationFrame(updateNumber);
+	};
+
+	useEffect(() => {
+		animateNumber("Number1", 1, 200, 3000);
+		animateNumber("Number2", 1, 1866224, 3000);
+		animateNumber("Number3", 1, 3212531, 3000);
+		animateNumber("Number4", 1, 120000, 3000);
+
+		return () => {
+			if (animationRef.current) {
+				cancelAnimationFrame(animationRef.current);
+			}
+		};
+	}, []);
+
 	return (
 		<div className="page" id="page3">
 			<video
@@ -22,7 +69,12 @@ const InfoPage3 = () => {
 						src="https://img.icons8.com/ios-filled/100/FFFFFF/home.png"
 					/>
 					<p className="commonText">正在幫助的浪浪園區有</p>
-					<p className="commonNumber Number1">0</p>
+					<div className="unit">
+						<p className="commonNumber Number1">
+							{numbers.Number1.toLocaleString()}
+						</p>
+						<p className="unitText">個</p>
+					</div>
 					<button className="commonButton">瞭解更多</button>
 				</div>
 				<div className="common">
@@ -31,8 +83,13 @@ const InfoPage3 = () => {
 						className="commonIcon"
 						src="https://img.icons8.com/windows/96/FFFFFF/hand-holding-dollar.png"
 					/>
-					<p className="commonText">已捐出的貓狗飼料總金額</p>
-					<p className="commonNumber Number2">0</p>
+					<p className="commonText">已捐出的貓狗飼料金額</p>
+					<div className="unit">
+						<p className="commonNumber Number2">
+							{numbers.Number2.toLocaleString()}
+						</p>
+						<p className="unitText">元</p>
+					</div>
 					<button className="commonButton">瞭解更多</button>
 				</div>
 				<div className="common">
@@ -42,7 +99,12 @@ const InfoPage3 = () => {
 						src="https://img.icons8.com/sf-regular/96/FFFFFF/like.png"
 					/>
 					<p className="commonText">已捐出的貓狗飼料總重</p>
-					<p className="commonNumber Number3">0</p>
+					<div className="unit">
+						<p className="commonNumber Number3">
+							{numbers.Number3.toLocaleString()}
+						</p>
+						<p className="unitText">kg</p>
+					</div>
 					<button className="commonButton">瞭解更多</button>
 				</div>
 				<div className="common">
@@ -51,8 +113,13 @@ const InfoPage3 = () => {
 						className="commonIcon"
 						src="https://img.icons8.com/ios/100/FFFFFF/dog--v1.png"
 					/>
-					<p className="commonText">正在受惠的貓狗總數</p>
-					<p className="commonNumber Number4">0</p>
+					<p className="commonText">正在受惠中的貓狗總數</p>
+					<div className="unit">
+						<p className="commonNumber Number4">
+							{numbers.Number4.toLocaleString()}
+						</p>
+						<p className="unitText">隻</p>
+					</div>
 					<button className="commonButton">瞭解更多</button>
 				</div>
 			</div>

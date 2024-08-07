@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./InfoPage1.css";
 
 const InfoPage1 = () => {
+	const [activeSection, setActiveSection] = useState("doc");
+
+	const handleIconClick = (section) => {
+		setActiveSection(section);
+	};
+
 	return (
 		<div className="page" id="page1">
 			<video
@@ -20,7 +26,11 @@ const InfoPage1 = () => {
 			</div>
 			<div className="homeSelect">
 				<div className="selectTop">
-					<div id="homeDoc">
+					<div
+						id="homeDoc"
+						className={activeSection === "doc" ? "changeColor" : ""}
+						onClick={() => handleIconClick("doc")}
+					>
 						<img
 							alt="看診icon"
 							src="https://img.icons8.com/ios-filled/100/FFFFFF/calendar--v1.png"
@@ -28,7 +38,11 @@ const InfoPage1 = () => {
 						<p>看診預約</p>
 					</div>
 					<hr />
-					<div id="homeBeauty">
+					<div
+						id="homeBeauty"
+						className={activeSection === "beauty" ? "changeColor" : ""}
+						onClick={() => handleIconClick("beauty")}
+					>
 						<img
 							alt="美容icon"
 							src="https://img.icons8.com/ios-filled/100/FFFFFF/barber-scissors.png"
@@ -36,7 +50,11 @@ const InfoPage1 = () => {
 						<p>美容預約</p>
 					</div>
 					<hr />
-					<div id="homeNight">
+					<div
+						id="homeNight"
+						className={activeSection === "night" ? "changeColor" : ""}
+						onClick={() => handleIconClick("night")}
+					>
 						<img
 							alt="收容icon"
 							src="https://img.icons8.com/ios/100/FFFFFF/home-page.png"
@@ -44,66 +62,42 @@ const InfoPage1 = () => {
 						<p>收容預約</p>
 					</div>
 				</div>
-				<div className="selectBottom docSelectBottom">
+				<div
+					className={`selectBottom docSelectBottom ${
+						activeSection === "doc" ? "display" : ""
+					}`}
+				>
 					<input id="docDate" type="date" />
 					<select name="docLocation" id="docLocation">
 						<option value="選擇地區">選擇地區</option>
-						<option>台北</option>
-						<option>新北</option>
-						<option>桃園</option>
-						<option>新竹</option>
-						<option>苗栗</option>
-						<option>台中</option>
-						<option>彰化</option>
-						<option>南投</option>
-						<option>雲林</option>
-						<option>嘉義</option>
-						<option>台南</option>
-						<option>屏東</option>
-						<option>高雄</option>
+						{/* 其他選項 */}
 					</select>
 					<select name="docSubject" id="docSubject">
 						<option value="選擇專科">選擇專科</option>
 					</select>
 					<input type="submit" id="docConfirm" value="確認" />
 				</div>
-				<div className="selectBottom beautySelectBottom">
+				<div
+					className={`selectBottom beautySelectBottom ${
+						activeSection === "beauty" ? "display" : ""
+					}`}
+				>
 					<input id="beautyDate" type="date" />
 					<select name="beautyLocation" id="beautyLocation">
 						<option value="選擇地區">選擇地區</option>
-						<option>台北</option>
-						<option>新北</option>
-						<option>桃園</option>
-						<option>新竹</option>
-						<option>苗栗</option>
-						<option>台中</option>
-						<option>彰化</option>
-						<option>南投</option>
-						<option>雲林</option>
-						<option>嘉義</option>
-						<option>台南</option>
-						<option>屏東</option>
-						<option>高雄</option>
+						{/* 其他選項 */}
 					</select>
 					<input type="submit" id="beautyConfirm" value="確認" />
 				</div>
-				<div className="selectBottom nightSelectBottom">
+				<div
+					className={`selectBottom nightSelectBottom ${
+						activeSection === "night" ? "display" : ""
+					}`}
+				>
 					<input id="nightDate" type="date" />
 					<select name="nightLocation" id="nightLocation">
 						<option value="選擇地區">選擇地區</option>
-						<option>台北</option>
-						<option>新北</option>
-						<option>桃園</option>
-						<option>新竹</option>
-						<option>苗栗</option>
-						<option>台中</option>
-						<option>彰化</option>
-						<option>南投</option>
-						<option>雲林</option>
-						<option>嘉義</option>
-						<option>台南</option>
-						<option>屏東</option>
-						<option>高雄</option>
+						{/* 其他選項 */}
 					</select>
 					<input type="submit" id="nightConfirm" value="確認" />
 				</div>
