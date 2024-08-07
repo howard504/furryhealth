@@ -7,6 +7,7 @@
 	bottom: -270px;
 	transition: bottom 0.5s ease;
 	backdrop-filter: blur(10px);
+	min-width: auto;
 }
 .footer-expanded {
 	bottom: 0px; /* 展開時頁尾上移到可見位置 */
@@ -52,14 +53,15 @@
 .footerIcon {
 	display: flex;
 	cursor: pointer;
+	position: absolute;
+	right: 10%;
+	top: 50%;
 }
 .footerIcon img {
 	display: block;
-	position: relative;
+
 	width: 35px;
-	margin: 10px 20px;
-	left: 75%;
-	top: 150px;
+	margin: 10px;
 }
 .footer hr {
 	position: relative;

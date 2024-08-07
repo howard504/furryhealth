@@ -107,6 +107,7 @@ a {
 	justify-content: center;
 	align-items: center;
 	backdrop-filter: blur(10px);
+	padding: 40px;
 }
 
 .navBarShowOut.show {
@@ -115,8 +116,8 @@ a {
 
 .navBarShowOut button {
 	margin: 20px;
-	padding: 30px 20px;
-	font-size: 34px;
+	padding: 30px;
+	font-size: 30px;
 	border: none;
 	background-color: rgba(0, 0, 0, 0);
 	color: #fff;
@@ -127,8 +128,8 @@ a {
 
 .navBarShowOut img {
 	position: absolute;
-	top: 20px;
-	right: 20px;
+	top: 30px;
+	right: 60px;
 	width: 40px;
 	cursor: pointer;
 }
@@ -170,7 +171,7 @@ a {
 
 .navIcon {
 	position: absolute;
-	right: 20px;
+	right: 10px;
 }
 
 .navIcon button {
@@ -181,7 +182,7 @@ a {
 .navIcon button i {
 	position: relative;
 	top: 10px;
-	margin: 0 15px;
+	margin: 0 10px;
 	font-size: 28px;
 	cursor: pointer;
 }

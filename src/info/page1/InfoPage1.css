@@ -28,7 +28,7 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	opacity: 0.38;
+	opacity: 0.5;
 	z-index: -1;
 }
 
@@ -54,7 +54,7 @@
 	min-height: 300px;
 	top: 50px;
 	width: 80%;
-	height: 40%;
+	height: 45%;
 	background: linear-gradient(to top left, #0089a7, #6cabb9);
 	border-radius: 20px;
 }
@@ -101,7 +101,7 @@
 /* 底部選擇區域樣式 */
 .selectBottom {
 	justify-content: center;
-	margin: 10px auto;
+	margin: 20px auto;
 	display: none;
 }
 

@@ -70,7 +70,19 @@ const InfoPage1 = () => {
 					<input id="docDate" type="date" />
 					<select name="docLocation" id="docLocation">
 						<option value="選擇地區">選擇地區</option>
-						{/* 其他選項 */}
+						<option>台北</option>
+						<option>新北</option>
+						<option>桃園</option>
+						<option>新竹</option>
+						<option>苗栗</option>
+						<option>台中</option>
+						<option>彰化</option>
+						<option>南投</option>
+						<option>雲林</option>
+						<option>嘉義</option>
+						<option>台南</option>
+						<option>屏東</option>
+						<option>高雄</option>
 					</select>
 					<select name="docSubject" id="docSubject">
 						<option value="選擇專科">選擇專科</option>
@@ -85,7 +97,19 @@ const InfoPage1 = () => {
 					<input id="beautyDate" type="date" />
 					<select name="beautyLocation" id="beautyLocation">
 						<option value="選擇地區">選擇地區</option>
-						{/* 其他選項 */}
+						<option>台北</option>
+						<option>新北</option>
+						<option>桃園</option>
+						<option>新竹</option>
+						<option>苗栗</option>
+						<option>台中</option>
+						<option>彰化</option>
+						<option>南投</option>
+						<option>雲林</option>
+						<option>嘉義</option>
+						<option>台南</option>
+						<option>屏東</option>
+						<option>高雄</option>
 					</select>
 					<input type="submit" id="beautyConfirm" value="確認" />
 				</div>
@@ -97,7 +121,19 @@ const InfoPage1 = () => {
 					<input id="nightDate" type="date" />
 					<select name="nightLocation" id="nightLocation">
 						<option value="選擇地區">選擇地區</option>
-						{/* 其他選項 */}
+						<option>台北</option>
+						<option>新北</option>
+						<option>桃園</option>
+						<option>新竹</option>
+						<option>苗栗</option>
+						<option>台中</option>
+						<option>彰化</option>
+						<option>南投</option>
+						<option>雲林</option>
+						<option>嘉義</option>
+						<option>台南</option>
+						<option>屏東</option>
+						<option>高雄</option>
 					</select>
 					<input type="submit" id="nightConfirm" value="確認" />
 				</div>
