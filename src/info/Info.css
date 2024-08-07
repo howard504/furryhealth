@@ -2,3 +2,10 @@
 	font-family: "all-text";
 	src: url(../jf2.2四分糖.otf);
 }
+body {
+	font-family: "all-text";
+}
+
+body::-webkit-scrollbar {
+	width: 0;
+}
