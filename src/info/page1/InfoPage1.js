@@ -2,11 +2,6 @@ import React from "react";
 import "./InfoPage1.css";
 
 const InfoPage1 = () => {
-	const toggleFooter = () => {
-		// 在這裡實現你的邏輯
-		console.log("Footer toggled");
-	};
-
 	return (
 		<div className="page" id="page1">
 			<video
@@ -111,34 +106,6 @@ const InfoPage1 = () => {
 						<option>高雄</option>
 					</select>
 					<input type="submit" id="nightConfirm" value="確認" />
-				</div>
-			</div>
-			<div className="footer" onClick={toggleFooter}>
-				<div className="footerIcon">
-					<img
-						alt="ins"
-						src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/96/FFFFFF/external-instagram-social-media-tanah-basah-basic-outline-tanah-basah.png"
-					/>
-					<img
-						alt="line"
-						src="https://img.icons8.com/ios/100/FFFFFF/line-me.png"
-					/>
-					<img
-						alt="tiwtter"
-						src="https://img.icons8.com/ios-filled/100/FFFFFF/twitterx--v2.png"
-					/>
-				</div>
-				<div id="buttonMoveUp">
-					<img
-						alt="showup"
-						src="https://img.icons8.com/ios-filled/100/FFFFFF/up--v1.png"
-					/>
-					<p>see more</p>
-					<span>地址:台中市公益路 二段 338號 8樓之8</span>
-					<span>連絡電話 : 04-2278-5847</span>
-					<span>隱私權政策</span>
-					<hr />
-					<span>Copy right©2024 Furry Health寵醫網</span>
 				</div>
 			</div>
 		</div>
