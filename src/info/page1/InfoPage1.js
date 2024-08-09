@@ -11,7 +11,7 @@ const InfoPage1 = () => {
 	return (
 		<div className="page" id="page1">
 			<video
-				autoPlay
+				// autoPlay
 				muted
 				loop
 				src="../大專素材/影片/狗/3045714-sd_640_360_25fps.mp4"

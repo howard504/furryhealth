@@ -10,6 +10,9 @@ const InfoPage3 = () => {
 	});
 
 	const animationRef = useRef(null);
+	const pageRef = useRef(null);
+	const [isVisible, setIsVisible] = useState(false);
+	const [hasAnimated, setHasAnimated] = useState(false);
 
 	const animateNumber = (key, start, end, duration) => {
 		let startTime = null;
@@ -35,26 +38,50 @@ const InfoPage3 = () => {
 
 		animationRef.current = requestAnimationFrame(updateNumber);
 	};
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				setIsVisible(entry.isIntersecting);
+			},
+			{
+				threshold: 0.1,
+			}
+		);
+
+		const currentPageRef = pageRef.current;
+		if (currentPageRef) {
+			observer.observe(currentPageRef);
+		}
+
+		return () => {
+			if (currentPageRef) {
+				observer.unobserve(currentPageRef);
+			}
+		};
+	}, []);
 
 	useEffect(() => {
-		animateNumber("Number1", 1, 200, 3000);
-		animateNumber("Number2", 1, 1866224, 3000);
-		animateNumber("Number3", 1, 3212531, 3000);
-		animateNumber("Number4", 1, 120000, 3000);
+		if (isVisible && !hasAnimated) {
+			animateNumber("Number1", 0, 200, 2000);
+			animateNumber("Number2", 0, 1866224, 2000);
+			animateNumber("Number3", 0, 3212531, 2000);
+			animateNumber("Number4", 0, 120000, 2000);
+			setHasAnimated(true);
+		}
 
 		return () => {
 			if (animationRef.current) {
 				cancelAnimationFrame(animationRef.current);
 			}
 		};
-	}, []);
+	}, [isVisible, hasAnimated]);
 
 	return (
-		<div className="page" id="page3">
+		<div className="page" id="page3" ref={pageRef}>
 			<video
-				autoPlay
 				muted={true}
 				loop
+				playsInline
 				src="../大專素材/影片/狗/3045714-sd_640_360_25fps.mp4"
 			></video>
 			<h2 id="page3TopTitle">公益活動</h2>
