@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, {
+	useState,
+	useEffect,
+	useRef,
+	useMemo,
+	useCallback,
+} from "react";
 import "./InfoPage3.css";
 
 const InfoPage3 = () => {
@@ -9,72 +15,63 @@ const InfoPage3 = () => {
 		Number4: 0,
 	});
 
-	const animationRef = useRef(null);
-	const pageRef = useRef(null);
 	const [isVisible, setIsVisible] = useState(false);
-	const [hasAnimated, setHasAnimated] = useState(false);
 
-	const animateNumber = (key, start, end, duration) => {
-		let startTime = null;
+	const targetNumbers = useMemo(
+		() => ({
+			Number1: 200,
+			Number2: 1821352,
+			Number3: 654652,
+			Number4: 12041,
+		}),
+		[]
+	);
 
-		const updateNumber = (currentTime) => {
-			if (!startTime) startTime = currentTime;
-			const progress = currentTime - startTime;
+	const animationDuration = 2000;
+	const frameRate = 60;
 
-			const currentNumber = Math.min(
-				Math.floor((progress / duration) * (end - start) + start),
-				end
-			);
+	const pageRef = useRef(null);
 
-			setNumbers((prevNumbers) => ({
-				...prevNumbers,
-				[key]: currentNumber,
-			}));
-
-			if (currentNumber < end) {
-				animationRef.current = requestAnimationFrame(updateNumber);
-			}
-		};
-
-		animationRef.current = requestAnimationFrame(updateNumber);
-	};
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				setIsVisible(entry.isIntersecting);
-			},
-			{
-				threshold: 0.1,
-			}
-		);
-
-		const currentPageRef = pageRef.current;
-		if (currentPageRef) {
-			observer.observe(currentPageRef);
+	const observerCallback = useCallback(([entry]) => {
+		if (entry.isIntersecting) {
+			setIsVisible(true);
 		}
-
-		return () => {
-			if (currentPageRef) {
-				observer.unobserve(currentPageRef);
-			}
-		};
 	}, []);
 
 	useEffect(() => {
-		if (isVisible && !hasAnimated) {
-			animateNumber("Number1", 0, 200, 2000);
-			animateNumber("Number2", 0, 1866224, 2000);
-			animateNumber("Number3", 0, 3212531, 2000);
-			animateNumber("Number4", 0, 120000, 2000);
-			setHasAnimated(true);
+		const observer = new IntersectionObserver(observerCallback, {
+			threshold: 0.1, // 當10%的元素可見時觸發
+		});
+
+		if (pageRef.current) {
+			observer.observe(pageRef.current);
 		}
 
 		return () => {
-			if (animationRef.current) {
-				cancelAnimationFrame(animationRef.current);
+			if (pageRef.current) {
+				observer.unobserve(pageRef.current);
 			}
 		};
-	}, [isVisible, hasAnimated]);
+	}, [observerCallback]);
+
+	useEffect(() => {
+		if (!isVisible) return;
+
+		const interval = 1000 / frameRate;
+		const steps = animationDuration / interval;
+
+		const timers = Object.keys(targetNumbers).map((key) => {
+			const increment = targetNumbers[key] / steps;
+			return setInterval(() => {
+				setNumbers((prevNumbers) => ({
+					...prevNumbers,
+					[key]: Math.min(prevNumbers[key] + increment, targetNumbers[key]),
+				}));
+			}, interval);
+		});
+
+		return () => timers.forEach(clearInterval);
+	}, [isVisible, targetNumbers, animationDuration, frameRate]);
 
 	return (
 		<div className="page" id="page3" ref={pageRef}>
@@ -98,7 +95,7 @@ const InfoPage3 = () => {
 					<p className="commonText">正在幫助的浪浪園區有</p>
 					<div className="unit">
 						<p className="commonNumber Number1">
-							{numbers.Number1.toLocaleString()}
+							{Math.round(numbers.Number1).toLocaleString()}
 						</p>
 						<p className="unitText">個</p>
 					</div>
@@ -113,7 +110,7 @@ const InfoPage3 = () => {
 					<p className="commonText">已捐出的貓狗飼料金額</p>
 					<div className="unit">
 						<p className="commonNumber Number2">
-							{numbers.Number2.toLocaleString()}
+							{Math.round(numbers.Number2).toLocaleString()}
 						</p>
 						<p className="unitText">元</p>
 					</div>
@@ -128,7 +125,7 @@ const InfoPage3 = () => {
 					<p className="commonText">已捐出的貓狗飼料總重</p>
 					<div className="unit">
 						<p className="commonNumber Number3">
-							{numbers.Number3.toLocaleString()}
+							{Math.round(numbers.Number3).toLocaleString()}
 						</p>
 						<p className="unitText">kg</p>
 					</div>
@@ -143,7 +140,7 @@ const InfoPage3 = () => {
 					<p className="commonText">正在受惠中的貓狗總數</p>
 					<div className="unit">
 						<p className="commonNumber Number4">
-							{numbers.Number4.toLocaleString()}
+							{Math.round(numbers.Number4).toLocaleString()}
 						</p>
 						<p className="unitText">隻</p>
 					</div>
