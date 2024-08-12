@@ -1,15 +1,22 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./header/Header";
-import Info from "./info/Info";
 import Footer from "./footer/Footer";
+import Info from "./info/Info";
+import Health from "./info/health/Health";
 
 const App = () => {
 	return (
-		<div>
-			<Header />
-			<Info />
-			<Footer />
-		</div>
+		<Router>
+			<div>
+				<Header />
+				<Routes>
+					<Route path="/" element={<Info />} />
+					<Route path="/health" element={<Health />} />
+				</Routes>
+				<Footer />
+			</div>
+		</Router>
 	);
 };
 

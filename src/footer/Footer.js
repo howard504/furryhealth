@@ -1,31 +1,32 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import "./Footer.css";
 
 function Footer() {
-	const footerHandles = useRef(null);
+	const [isExpanded, setIsExpanded] = useState(false);
+	const footerRef = useRef(null);
 
-	useEffect(() => {
-		footerHandles.current = document.querySelectorAll(".footer");
-
-		const handleClick = (event) => {
-			const footer = event.currentTarget.closest(".footer");
-			footer.classList.toggle("footer-expanded");
-		};
-
-		footerHandles.current.forEach((handle) => {
-			handle.addEventListener("click", handleClick);
-		});
-
-		// 清理函數，在組件卸載時移除事件監聽器
-		return () => {
-			footerHandles.current.forEach((handle) => {
-				handle.removeEventListener("click", handleClick);
-			});
-		};
+	const handleClick = useCallback(() => {
+		setIsExpanded((prevState) => !prevState);
 	}, []);
 
+	useEffect(() => {
+		const footer = footerRef.current;
+		if (footer) {
+			footer.addEventListener("click", handleClick);
+		}
+
+		return () => {
+			if (footer) {
+				footer.removeEventListener("click", handleClick);
+			}
+		};
+	}, [handleClick]);
+
 	return (
-		<div className="footer">
+		<div
+			ref={footerRef}
+			className={`footer ${isExpanded ? "footer-expanded" : ""}`}
+		>
 			<div className="footerIcon">
 				<img
 					src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/96/FFFFFF/external-instagram-social-media-tanah-basah-basic-outline-tanah-basah.png"
