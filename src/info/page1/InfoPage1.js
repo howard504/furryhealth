@@ -70,22 +70,36 @@ const InfoPage1 = () => {
 					<input id="docDate" type="date" />
 					<select name="docLocation" id="docLocation">
 						<option value="選擇地區">選擇地區</option>
-						<option>台北</option>
-						<option>新北</option>
-						<option>桃園</option>
-						<option>新竹</option>
-						<option>苗栗</option>
-						<option>台中</option>
-						<option>彰化</option>
-						<option>南投</option>
-						<option>雲林</option>
-						<option>嘉義</option>
-						<option>台南</option>
-						<option>屏東</option>
-						<option>高雄</option>
+						<option value="1">台北市</option>
+						<option value="2">新北市</option>
+						<option value="3">桃園市</option>
+						<option value="4">台中市</option>
+						<option value="5">台南市</option>
+						<option value="6">高雄市</option>
+						<option value="7">基隆市</option>
+						<option value="8">新竹市</option>
+						<option value="9">嘉義市</option>
+						<option value="10">新竹縣</option>
+						<option value="11">苗栗縣</option>
+						<option value="12">彰化縣</option>
+						<option value="13">南投縣</option>
+						<option value="14">雲林縣</option>
+						<option value="15">嘉義縣</option>
+						<option value="16">屏東縣</option>
+						<option value="17">宜蘭縣</option>
+						<option value="18">花蓮縣</option>
+						<option value="19">台東縣</option>
+						<option value="20">澎湖縣</option>
 					</select>
 					<select name="docSubject" id="docSubject">
 						<option value="選擇專科">選擇專科</option>
+						<option value="1">心臟科</option>
+						<option value="2">牙科</option>
+						<option value="3">眼科</option>
+						<option value="4">皮膚科</option>
+						<option value="5">骨科</option>
+						<option value="6">外科</option>
+						<option value="7">神經內科</option>
 					</select>
 					<input type="submit" id="docConfirm" value="確認" />
 				</div>
@@ -97,19 +111,26 @@ const InfoPage1 = () => {
 					<input id="beautyDate" type="date" />
 					<select name="beautyLocation" id="beautyLocation">
 						<option value="選擇地區">選擇地區</option>
-						<option>台北</option>
-						<option>新北</option>
-						<option>桃園</option>
-						<option>新竹</option>
-						<option>苗栗</option>
-						<option>台中</option>
-						<option>彰化</option>
-						<option>南投</option>
-						<option>雲林</option>
-						<option>嘉義</option>
-						<option>台南</option>
-						<option>屏東</option>
-						<option>高雄</option>
+						<option value="1">台北市</option>
+						<option value="2">新北市</option>
+						<option value="3">桃園市</option>
+						<option value="4">台中市</option>
+						<option value="5">台南市</option>
+						<option value="6">高雄市</option>
+						<option value="7">基隆市</option>
+						<option value="8">新竹市</option>
+						<option value="9">嘉義市</option>
+						<option value="10">新竹縣</option>
+						<option value="11">苗栗縣</option>
+						<option value="12">彰化縣</option>
+						<option value="13">南投縣</option>
+						<option value="14">雲林縣</option>
+						<option value="15">嘉義縣</option>
+						<option value="16">屏東縣</option>
+						<option value="17">宜蘭縣</option>
+						<option value="18">花蓮縣</option>
+						<option value="19">台東縣</option>
+						<option value="20">澎湖縣</option>
 					</select>
 					<input type="submit" id="beautyConfirm" value="確認" />
 				</div>
@@ -121,19 +142,26 @@ const InfoPage1 = () => {
 					<input id="nightDate" type="date" />
 					<select name="nightLocation" id="nightLocation">
 						<option value="選擇地區">選擇地區</option>
-						<option>台北</option>
-						<option>新北</option>
-						<option>桃園</option>
-						<option>新竹</option>
-						<option>苗栗</option>
-						<option>台中</option>
-						<option>彰化</option>
-						<option>南投</option>
-						<option>雲林</option>
-						<option>嘉義</option>
-						<option>台南</option>
-						<option>屏東</option>
-						<option>高雄</option>
+						<option value="1">台北市</option>
+						<option value="2">新北市</option>
+						<option value="3">桃園市</option>
+						<option value="4">台中市</option>
+						<option value="5">台南市</option>
+						<option value="6">高雄市</option>
+						<option value="7">基隆市</option>
+						<option value="8">新竹市</option>
+						<option value="9">嘉義市</option>
+						<option value="10">新竹縣</option>
+						<option value="11">苗栗縣</option>
+						<option value="12">彰化縣</option>
+						<option value="13">南投縣</option>
+						<option value="14">雲林縣</option>
+						<option value="15">嘉義縣</option>
+						<option value="16">屏東縣</option>
+						<option value="17">宜蘭縣</option>
+						<option value="18">花蓮縣</option>
+						<option value="19">台東縣</option>
+						<option value="20">澎湖縣</option>
 					</select>
 					<input type="submit" id="nightConfirm" value="確認" />
 				</div>
