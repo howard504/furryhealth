@@ -135,7 +135,9 @@
 }
 
 .InfoLeftItem h3 {
-	font-size: 20px;
+	font-size: 24px;
+	font-weight: 500;
+	white-space: nowrap;
 	padding: 10px;
 	margin: 5px;
 	text-align: start;
@@ -148,6 +150,7 @@
 	opacity: 0.5;
 	border: none;
 	background-color: #ccc;
+	margin: 20px 0px;
 }
 
 .InfoLeftItem button {
@@ -168,4 +171,16 @@
 
 .InfoLeftItem button:hover {
 	opacity: 0.7;
+}
+.diseaseInfo {
+	padding: 20px;
+}
+
+.infoContent {
+	margin-top: 20px;
+}
+
+.infoContent h3 {
+	margin-top: 15px;
+	margin-bottom: 10px;
 }

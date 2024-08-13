@@ -8,14 +8,12 @@ import Health from "./info/health/Health";
 const App = () => {
 	return (
 		<Router>
-			<div>
-				<Header />
-				<Routes>
-					<Route path="/" element={<Info />} />
-					<Route path="/health" element={<Health />} />
-				</Routes>
-				<Footer />
-			</div>
+			<Header />
+			<Routes>
+				<Route path="/" element={<Info />} />
+				<Route path="/health" element={<Health />} />
+			</Routes>
+			<Footer />
 		</Router>
 	);
 };
