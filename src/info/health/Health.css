@@ -130,8 +130,8 @@
 	display: none;
 }
 .InfoLeftItem button.selected {
-	background-color: #0199bb;
-	color: white;
+	background-color: #078aa7;
+	color: rgba(255, 255, 255, 0.871);
 	letter-spacing: 6px;
 	font-weight: bold;
 	border-radius: 8px;
@@ -145,8 +145,9 @@
 }
 
 .InfoLeftItem h3 {
-	font-size: 24px;
-	font-weight: 500;
+	font-size: 26px;
+	font-weight: 600;
+	letter-spacing: 2px;
 	white-space: nowrap;
 	padding: 10px;
 	margin: 5px;
@@ -169,7 +170,7 @@
 	border: none;
 	background-color: transparent;
 	padding: 10px 5px;
-	font-size: 18px;
+	font-size: 20px;
 	letter-spacing: 1px;
 	white-space: nowrap;
 	display: block;
